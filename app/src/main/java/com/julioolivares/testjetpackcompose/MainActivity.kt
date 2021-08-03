@@ -6,10 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -24,6 +21,8 @@ import org.w3c.dom.NameList
 import androidx.compose.runtime.getValue
 
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.VerticalAlignmentLine
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +39,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyScreenContent(names : List<String> = listOf("Ruth","Jesica","Mariela","Jennifer","Lic")){
+fun MyScreenContent(names : List<String> = listOf("","","","","")){
     val counterState = remember {
         mutableStateOf(0)
     }
-    Column(modifier = Modifier.fillMaxHeight()) {
+    Column(modifier = Modifier.fillMaxHeight(),horizontalAlignment = Alignment.CenterHorizontally) {
         NameList(modifier = Modifier.weight(1f))
         /*
         Column(modifier = Modifier.weight(1f)) {
